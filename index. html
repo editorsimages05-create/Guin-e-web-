@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(GuineeWebApp());
+}
+
+class GuineeWebApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Guinée Web',
+      theme: ThemeData(
+        primaryColor: Color(0xFF0B8F3C),
+        scaffoldBackgroundColor: Colors.black,
+      ),
+      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Guinée Web"),
+        backgroundColor: Color(0xFF0B8F3C),
+      ),
+      body: Center(
+        child: Text(
+          "Bienvenue sur Guinée Web 🇬🇳",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
+        selectedItemColor: Color(0xFFFCD116),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Accueil"),
+          BottomNavigationBarItem(icon: Icon(Icons.video_library), label: "Shorts"),
+          BottomNavigationBarItem(icon: Icon(Icons.store), label: "Marketplace"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profil"),
+        ],
+      ),
+    );
+  }
+}
